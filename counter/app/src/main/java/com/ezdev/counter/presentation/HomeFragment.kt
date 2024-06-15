@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<HomeViewModel>()
-    private val uiState get() = viewModel.uiState.value
+//    private val uiState get() = viewModel.uiState.value
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,10 +71,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.apply {
             root.setOnClickListener {
-                when (uiState.isRunning) {
-                    true -> viewModel.resetCounter()
-                    false -> lifecycleScope.launch { viewModel.startCounter() }
-                }
+                viewModel.switchCounter()
             }
             tvCount.setOnClickListener { viewModel.stopCounter() }
         }
@@ -93,7 +90,6 @@ class HomeFragment : Fragment() {
                     withContext(Dispatchers.Main) {
                         binding.tvCount.text = count
                     }
-
                 }
             }
         }

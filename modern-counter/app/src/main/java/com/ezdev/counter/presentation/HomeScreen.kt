@@ -26,10 +26,7 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel = viewMod
         modifier = modifier
             .fillMaxSize()
             .clickable {
-                when (uiState.isRunning) {
-                    true -> viewModel.resetCounter()
-                    false -> viewModel.startCounter()
-                }
+                viewModel.switchCounter()
             }
     ) {
         Text(text = count, modifier = Modifier.clickable {

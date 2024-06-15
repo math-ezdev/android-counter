@@ -12,7 +12,7 @@ class HomeViewModel : ViewModel() {
     var uiState by mutableStateOf(HomeUiState())
         private set
 
-    fun startCounter() {
+    private fun startCounter() {
         viewModelScope.launch {
             uiState = uiState.copy(isRunning = true)
             delay(1000L)
@@ -27,7 +27,14 @@ class HomeViewModel : ViewModel() {
         uiState = uiState.copy(isRunning = false)
     }
 
-    fun resetCounter() {
+    private fun resetCounter() {
         uiState = HomeUiState()
+    }
+
+    fun switchCounter() {
+        when (uiState.isRunning) {
+            true -> resetCounter()
+            false -> startCounter()
+        }
     }
 }
