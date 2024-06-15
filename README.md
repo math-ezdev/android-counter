@@ -8,8 +8,8 @@
 - View: Fragment / Composable
 - ViewModel
   \
-  <img src="clean-architecture.png" alt="Clean Architecture" width="360" height="400" />
-  <img src="mvvm-architecture.png" alt="MVVM Architecture" width="360" height="400" />
+  <img src="clean-architecture.png" alt="Clean Architecture" width="480" height="400" />
+  <img src="mvvm-architecture.png" alt="MVVM Architecture" width="480" height="400" />
 
 #### App Navigation
 
@@ -18,8 +18,8 @@
 - NavController
 - NavDestination
 - Route
-\
-<img src="app-navigation.png" alt="App Navigation" width="720" height="400" />
+  \
+  <img src="app-navigation.png" alt="App Navigation" width="960" height="400" />
 
 
 
