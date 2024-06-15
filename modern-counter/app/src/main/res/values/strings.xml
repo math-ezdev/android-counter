@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="click_to_start_counter">Click to start Counter</string>
+</resources>
